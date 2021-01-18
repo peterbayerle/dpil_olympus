@@ -19,17 +19,21 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    // add 12 posts
     var posts = [];
-    for (let i=0; i<5; i++) {
+    for (let i=0; i<3; i++) {
       posts.push({
         key: i,
         user: `Name ${i+1}`,
         text: lorem.generateSentences(),
-        delay: 3000*(i+1)
+        timeShow: 3000*i,
+        timeHide: 3000*i + 10000
       });
     }
 
     this.setState({ posts: posts });
+
+    // add final 6 posts over time
   };
 
   render() {

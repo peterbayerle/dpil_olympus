@@ -5,10 +5,8 @@ import Container from 'react-bootstrap/Container';
 class Post extends React.Component {
   constructor(props) {
     super(props);
-    this.timeOnCreation = Date.now();
-    this.duration = props.duration
     this.state = {
-      visible: true
+      visible: false
     }
   };
 
@@ -17,20 +15,23 @@ class Post extends React.Component {
   };
 
   setTimer() {
-    // clear any existing timer
-    if (this._timer != null) {
-      clearTimeout(this._timer)
-    }
+    // show after `timeBeforeShow` milliseconds
+    this._showTimer = setTimeout(() => {
+      this.setState({visible: true});
+      this._showTimer = null;
+    }, this.props.timeShow);
 
-    // hide after `delay` milliseconds
-    this._timer = setTimeout(() => {
+    // hide after `timeUntilHide` milliseconds
+    this._hideTimer = setTimeout(() => {
       this.setState({visible: false});
-      this._timer = null;
-    }, this.props.delay);
+      this._hideTimer = null;
+    }, this.props.timeHide);
   };
 
   componentWillUnmount() {
-    clearTimeout(this._timer);
+    clearTimeout(this._showTimer);
+    clearTimeout(this._hideTimer);
+
   };
 
   render() {
@@ -41,7 +42,6 @@ class Post extends React.Component {
             <Card.Header><b>{this.props.user}</b></Card.Header>
             <Card.Body>
               <Card.Text>{this.props.text}</Card.Text>
-              <Card.Text>{this.timeOnCreation}</Card.Text>
             </Card.Body>
           </Card>
         </Container>

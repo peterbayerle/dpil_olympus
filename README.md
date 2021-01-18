@@ -1,5 +1,11 @@
 # 🏛 Olympus (DPIL web app)
 
+## Basic demo
+Posts appear on the page every 3 seconds, and disappear after 10 seconds of being on screen:
+
+<img src="./static/demo.gif"> </img>
+
+## `npm` commands
 ### `npm start`
 
 Runs the app in the development mode.\
