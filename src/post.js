@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
 
 class Post extends React.Component {
   constructor(props) {
@@ -37,14 +36,14 @@ class Post extends React.Component {
   render() {
     return this.state.visible ? (
       <div className="Post">
-        <Container className="w-50 pt-2">
+        <div className="pt-2">
           <Card>
             <Card.Header><b>{this.props.user}</b></Card.Header>
             <Card.Body>
               <Card.Text>{this.props.text}</Card.Text>
             </Card.Body>
           </Card>
-        </Container>
+        </div>
       </div>
     ) : null;
   };
