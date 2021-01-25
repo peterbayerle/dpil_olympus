@@ -1,6 +1,9 @@
 import React from 'react';
 import Post from './post';
 import { LoremIpsum } from "lorem-ipsum";
+// import { CSSTransition, TransitionGroup} from 'react-transition-group';
+
+// import './styles.css';
 
 const lorem = new LoremIpsum({
   wordsPerSentence: {
@@ -19,7 +22,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    // add 12 posts
+    // add 3 posts
     var posts = [];
     for (let i=0; i<3; i++) {
       posts.push({
@@ -32,8 +35,6 @@ class App extends React.Component {
     }
 
     this.setState({ posts: posts });
-
-    // add final 6 posts over time
   };
 
   render() {
@@ -41,7 +42,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <div className="pt-3">
-            <h1 className="text-center">🏛 Olympus</h1>
+            <h1 id="olympusTitle" className="text-center">🏛 Olympus</h1>
             { this.state.posts.map((data) => {
               return (
                 <Post {...data} />
