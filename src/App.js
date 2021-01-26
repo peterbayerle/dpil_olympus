@@ -4,10 +4,6 @@ import PostForm from './postform';
 import { LoremIpsum } from "lorem-ipsum";
 import Container from 'react-bootstrap/Container';
 
-// import { CSSTransition, TransitionGroup} from 'react-transition-group';
-
-// import './styles.css';
-
 const lorem = new LoremIpsum({
   wordsPerSentence: {
     max: 10,
@@ -18,6 +14,7 @@ const lorem = new LoremIpsum({
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.numPosts = 3;
     this.currentIndx = 0;
     this.state = {
       posts: [],
@@ -40,11 +37,35 @@ class App extends React.Component {
     this.setState({ posts: posts });
   };
 
+  handlePostSubmission(event) {
+    event.preventDefault();
+    var contents = event.target[0].value;
+
+    // add new post
+    var posts = this.state.posts;
+    posts.unshift({
+      key: this.numPosts,
+      user: 'You',
+      text: contents,
+      timeshow: 0,
+      timeHide: 10000
+    });
+
+    this.numPosts++ 
+    this.setState({ posts: posts });
+
+    // post message for parent of frame to recieve
+    window.parent.postMessage(
+      { event_id: 'submitted post', contents: contents },  '*'
+    ); 
+
+  };
+
   render() {
     return (
       <Container className="App w-50 pt-3">
         <h1 id="olympusTitle" className="text-center">🏛 Olympus</h1>
-        <PostForm />
+        <PostForm onSubmit={this.handlePostSubmission.bind(this)}/>
         { this.state.posts.map((data) => {
           return (
             <Post {...data} />
