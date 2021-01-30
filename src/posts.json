@@ -1,0 +1,14 @@
+{
+    "posts":[
+        {"user":"Peter 0","text":"test post 0","timeShow":0,"timeHide":20000},
+        {"user":"Peter 1","text":"test post 1","timeShow":0,"timeHide":30000},
+        {"user":"Peter 2","text":"test post 2","timeShow":0,"timeHide":40000},
+        {"user":"Peter 3","text":"test post 3","timeShow":0,"timeHide":50000},
+        {"user":"Peter 4","text":"test post 4","timeShow":0,"timeHide":60000},
+        {"user":"Peter 5","text":"test post 5","timeShow":40000,"timeHide":100000},
+        {"user":"Peter 6","text":"test post 6","timeShow":50000,"timeHide":110000},
+        {"user":"Peter 7","text":"test post 7","timeShow":60000,"timeHide":120000},
+        {"user":"Peter 8","text":"test post 8","timeShow":70000,"timeHide":130000},
+        {"user":"Peter 9","text":"test post 9","timeShow":80000,"timeHide":140000}
+    ]
+}
