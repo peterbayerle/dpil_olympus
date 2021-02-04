@@ -3,10 +3,11 @@ import Button from 'react-bootstrap/Button';
 
 function PostForm(props) {
   return (
-    <Form onSubmit={props.onSubmit}>
+    <Form onSubmit={props.onSubmit} className="pt-3">
       <Form.Group>
-        <Form.Label>Make post:</Form.Label>
-        <Form.Control id="formTextBox" as="textarea" rows={3} />
+        <Form.Label>What are your thoughts?
+        </Form.Label>
+        <Form.Control id="formTextBox" as="textarea" rows={2} />
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit

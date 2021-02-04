@@ -1,79 +1,88 @@
 import React from 'react';
 import Post from './post';
-import PostForm from './postform';
-import { LoremIpsum } from "lorem-ipsum";
+// import PostForm from './postform';
 import Container from 'react-bootstrap/Container';
-
-const lorem = new LoremIpsum({
-  wordsPerSentence: {
-    max: 10,
-    min: 5
-  }
-});
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import { posts } from './posts.json';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.numPosts = 3;
-    this.currentIndx = 0;
     this.state = {
       posts: [],
     };
   };
 
   componentDidMount() {
-    // add 3 posts
-    var posts = [];
-    for (let i=0; i<3; i++) {
-      posts.push({
-        key: i,
-        user: `Name ${i+1}`,
-        text: lorem.generateSentences(),
-        timeShow: 3000*i,
-        timeHide: 3000*i + 10000
-      });
+    // add posts     
+    for (var i=0; i<posts.length; i++) {
+      (function(i) {
+        this.showTimer = setTimeout(() => {
+          this.addPost(posts[i]);
+        }, posts[i].showTime*1000);
+      }).bind(this)(i);
     }
-
-    this.setState({ posts: posts });
   };
 
-  handlePostSubmission(event) {
-    event.preventDefault();
-    var contents = event.target[0].value;
-
-    // add new post
-    var posts = this.state.posts;
-    posts.unshift({
-      key: this.numPosts,
-      user: 'You',
-      text: contents,
-      timeshow: 0,
-      timeHide: 10000
-    });
-
-    this.numPosts++ 
-    this.setState({ posts: posts });
-
-    // post message for parent of frame to recieve
-    window.parent.postMessage(
-      { event_id: 'submitted post', contents: contents },  '*'
-    ); 
-
+  componentWillUnmount() {
+    clearTimeout(this.showTimer);
   };
+
+  addPost(post) {
+    var idx = this.state.posts.indexOf(null);
+    var newPosts = this.state.posts;
+    if (idx >= 0) {
+      post.reusingPost = true;
+      post.idx = idx;
+      newPosts[idx] = post;
+    } else {
+      post.idx = this.state.posts.length;
+      newPosts.push(post);
+    }
+    this.setState({posts: newPosts});
+  }
+
+  removePost(idx) {
+    var newPosts = this.state.posts;
+    newPosts[idx] = null ;
+    this.setState({posts: newPosts});
+  };
+
+  timerRefreshed(idx) {
+    var newPosts = this.state.posts
+    newPosts[idx].reusingPost = false;
+    this.setState({posts: newPosts});
+  }
 
   render() {
     return (
       <Container className="App w-50 pt-3">
         <h1 id="olympusTitle" className="text-center">🏛 Olympus</h1>
-        <PostForm onSubmit={this.handlePostSubmission.bind(this)}/>
-        { this.state.posts.map((data) => {
-          return (
-            <Post {...data} />
-          );
-        }) }
+        <Post 
+          bg="dark"
+          user="Question asker"
+          text="Soo...what do you guys think about this??"
+        />
+        { [0, 2, 4].map((startingIdx, key) => {
+            return (<Row className='pt-3' key={key}>
+              { this.state.posts.slice(startingIdx,startingIdx+2).map((data, idx) => {
+                return (
+                  <Col key={idx}>
+                    <Post 
+                      {...data} 
+                      removePost={this.removePost.bind(this)}
+                      timerRefreshed={this.timerRefreshed.bind(this)}
+                    />
+                  </Col>
+                );
+              }) }
+            </Row>);
+          }) }
       </Container>
     );
   };
 };
+
 
 export default App;

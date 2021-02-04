@@ -2,42 +2,34 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 
 class Post extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false
-    }
-  };
-
   componentDidMount() {
     this.setTimer();
   };
 
-  setTimer() {
-    // show after `timeBeforeShow` milliseconds
-    this._showTimer = setTimeout(() => {
-      this.setState({visible: true});
-      this._showTimer = null;
-    }, this.props.timeShow);
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.reusingPost) {
+      this.props.timerRefreshed(this.props.idx);
+      this.setTimer();
+    }
+  }
 
-    // hide after `timeUntilHide` milliseconds
-    this._hideTimer = setTimeout(() => {
-      this.setState({visible: false});
-      this._hideTimer = null;
-    }, this.props.timeHide);
+  setTimer() {
+    if (this.props.duration) {
+      this.hideTimer = setTimeout(() => {
+        this.props.removePost(this.props.idx);
+      }, this.props.duration*1000);
+    }
   };
 
   componentWillUnmount() {
-    clearTimeout(this._showTimer);
-    clearTimeout(this._hideTimer);
-
+    clearTimeout(this.hideTimer);
   };
 
   render() {
-    return this.state.visible ? (
+    return (
       <div className="Post">
         <div className="pt-2">
-          <Card>
+          <Card border={this.props.bg} style={{visibility: this.props.text ? "visible" : "hidden"}}>
             <Card.Header><b>{this.props.user}</b></Card.Header>
             <Card.Body>
               <Card.Text>{this.props.text}</Card.Text>
@@ -45,7 +37,7 @@ class Post extends React.Component {
           </Card>
         </div>
       </div>
-    ) : null;
+    );
   };
 
 };
