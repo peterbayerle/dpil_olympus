@@ -1,21 +1,29 @@
-.move-enter {
-    opacity: 0.01;
-    transform: translate(-40px, 0)
+.Post {
+    display: block;
+    transition: transform 3s ease;
+    width: 500px;
+    height: 125px;
+    display: block;
+    transition: transform 3s ease;
+    margin: 0px 0px 10px 0px;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+.hidden {
+    animation: fadeaway 1s;
 }
 
-.move-enter-active {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition: all 500ms ease-in;
-}
-
-.move-exit {
-    opacity: 1;
-    transform: translate(0, 0)
-}
-
-.move-exit-active {
-    opacity: 0.01;
-    transform: translate(40px, 0);
-    transition: all 500ms ease-in;
+@keyframes fadeaway {
+    from {
+        opacity: 1;
+    }
+  
+    to {
+        opacity: 0; 
+        height: 0px;
+        margin: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

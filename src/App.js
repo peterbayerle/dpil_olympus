@@ -1,15 +1,8 @@
 import React from 'react';
 import Post from './post';
-import PostForm from './postform';
-import { LoremIpsum } from "lorem-ipsum";
+// import PostForm from './postform';
 import Container from 'react-bootstrap/Container';
-
-const lorem = new LoremIpsum({
-  wordsPerSentence: {
-    max: 10,
-    min: 5
-  }
-});
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -26,11 +19,12 @@ class App extends React.Component {
     var posts = [];
     for (let i=0; i<3; i++) {
       posts.push({
+        id: i,
         key: i,
         user: `Name ${i+1}`,
-        text: lorem.generateSentences(),
-        timeShow: 3000*i,
-        timeHide: 3000*i + 10000
+        text: 'test ' + i,
+        timeShow: 3000*(i+1),
+        timeHide: 5000*(i+1)
       });
     }
 
@@ -43,7 +37,8 @@ class App extends React.Component {
 
     // add new post
     var posts = this.state.posts;
-    posts.unshift({
+    posts.push({
+      id: this.numPosts,
       key: this.numPosts,
       user: 'You',
       text: contents,
@@ -65,12 +60,17 @@ class App extends React.Component {
     return (
       <Container className="App w-50 pt-3">
         <h1 id="olympusTitle" className="text-center">🏛 Olympus</h1>
-        <PostForm onSubmit={this.handlePostSubmission.bind(this)}/>
+        <Post 
+          question={true}
+          user={'Question asker'}
+          text={'what do you all think about this issue?'}
+        />
         { this.state.posts.map((data) => {
           return (
             <Post {...data} />
           );
         }) }
+        { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
       </Container>
     );
   };

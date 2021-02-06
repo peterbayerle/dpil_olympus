@@ -5,26 +5,29 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
+      visible: true
     }
   };
 
   componentDidMount() {
     this.setTimer();
+    var post = document.getElementById(`post${this.props.id}`);
+    post.addEventListener('animationend', () => {
+      if (post.classList.contains('hidden')) {
+          post.style.display = 'none';
+      }
+    });
   };
 
   setTimer() {
-    // show after `timeBeforeShow` milliseconds
-    this._showTimer = setTimeout(() => {
-      this.setState({visible: true});
-      this._showTimer = null;
-    }, this.props.timeShow);
-
-    // hide after `timeUntilHide` milliseconds
-    this._hideTimer = setTimeout(() => {
-      this.setState({visible: false});
-      this._hideTimer = null;
-    }, this.props.timeHide);
+    if (!this.props.question) {
+      // hide after `timeUntilHide` milliseconds
+      this._hideTimer = setTimeout(() => {
+        this.setState({visible: false});
+        this._hideTimer = null;
+      }, this.props.timeHide);
+    }
+    
   };
 
   componentWillUnmount() {
@@ -34,10 +37,10 @@ class Post extends React.Component {
   };
 
   render() {
-    return this.state.visible ? (
-      <div className="Post">
+    return (
+      <div id={`post${this.props.id}`} className={`Post ${!this.state.visible ? 'hidden' : ''}`}>
         <div className="pt-2">
-          <Card>
+          <Card border={this.props.question ? 'dark' : ''}>
             <Card.Header><b>{this.props.user}</b></Card.Header>
             <Card.Body>
               <Card.Text>{this.props.text}</Card.Text>
@@ -45,7 +48,7 @@ class Post extends React.Component {
           </Card>
         </div>
       </div>
-    ) : null;
+    );
   };
 
 };
