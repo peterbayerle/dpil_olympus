@@ -1,14 +1,21 @@
 {
-    "posts":[
-        {"user":"Peter 0","text":"test post 0","timeShow":0,"timeHide":20000},
-        {"user":"Peter 1","text":"test post 1","timeShow":0,"timeHide":30000},
-        {"user":"Peter 2","text":"test post 2","timeShow":0,"timeHide":40000},
-        {"user":"Peter 3","text":"test post 3","timeShow":0,"timeHide":50000},
-        {"user":"Peter 4","text":"test post 4","timeShow":0,"timeHide":60000},
-        {"user":"Peter 5","text":"test post 5","timeShow":40000,"timeHide":100000},
-        {"user":"Peter 6","text":"test post 6","timeShow":50000,"timeHide":110000},
-        {"user":"Peter 7","text":"test post 7","timeShow":60000,"timeHide":120000},
-        {"user":"Peter 8","text":"test post 8","timeShow":70000,"timeHide":130000},
-        {"user":"Peter 9","text":"test post 9","timeShow":80000,"timeHide":140000}
+    "posts": [
+        {"user":"Peter 0","text":"test post 0","timeShow":0,"timeHide":5},
+        {"user":"Peter 1","text":"test post 1","timeShow":0,"timeHide":10},
+        {"user":"Peter 2","text":"test post 2","timeShow":0,"timeHide":15},
+        {"user":"Peter 3","text":"test post 3","timeShow":6,"timeHide":5},
+        {"user":"Peter 4","text":"test post 4","timeShow":6,"timeHide":10}
+    ],
+    "dpil_posts":[
+        {"user":"Peter 0","text":"test post 0","timeShow":0,"timeHide":20},
+        {"user":"Peter 1","text":"test post 1","timeShow":0,"timeHide":30},
+        {"user":"Peter 2","text":"test post 2","timeShow":0,"timeHide":40},
+        {"user":"Peter 3","text":"test post 3","timeShow":0,"timeHide":50},
+        {"user":"Peter 4","text":"test post 4","timeShow":0,"timeHide":60},
+        {"user":"Peter 5","text":"test post 5","timeShow":41,"timeHide":100},
+        {"user":"Peter 6","text":"test post 6","timeShow":51,"timeHide":110},
+        {"user":"Peter 7","text":"test post 7","timeShow":61,"timeHide":120},
+        {"user":"Peter 8","text":"test post 8","timeShow":71,"timeHide":130},
+        {"user":"Peter 9","text":"test post 9","timeShow":81,"timeHide":140}
     ]
 }

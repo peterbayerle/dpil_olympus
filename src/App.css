@@ -11,10 +11,14 @@
  }
 
 .hidden {
-    animation: fadeaway 1s;
+    animation: fadeout 1s;
 }
 
-@keyframes fadeaway {
+.added {
+    animation: fadein 1s;
+}
+
+@keyframes fadeout {
     from {
         opacity: 1;
     }
@@ -25,5 +29,14 @@
         margin: 0px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
     }
 }

@@ -1,54 +1,52 @@
 import React from 'react';
 import Post from './post';
-// import PostForm from './postform';
 import Container from 'react-bootstrap/Container';
+import { posts } from './posts.json';
 import './App.css'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.numPosts = 3;
-    this.currentIndx = 0;
     this.state = {
       posts: [],
     };
   };
 
   componentDidMount() {
-    // add 3 posts
-    var posts = [];
-    for (let i=0; i<3; i++) {
-      posts.push({
-        id: i,
-        key: i,
-        user: `Name ${i+1}`,
-        text: 'test ' + i,
-        timeShow: 3000*(i+1),
-        timeHide: 5000*(i+1)
-      });
+    // add posts     
+    for (var i=0; i<posts.length; i++) {
+      (function(i) {
+        this.showTimer = setTimeout(() => {
+          this.addPost(i, posts[i]);
+        }, posts[i].timeShow*1000);
+      }).bind(this)(i);
     }
-
-    this.setState({ posts: posts });
   };
+
+  addPost(key, post) {
+    post.id = key;
+    post.key = key;
+    var newPosts = this.state.posts;
+    newPosts.push(post);
+    this.setState({posts: newPosts});
+
+    this.numPosts++;
+  }
 
   handlePostSubmission(event) {
     event.preventDefault();
     var contents = event.target[0].value;
 
     // add new post
-    var posts = this.state.posts;
-    posts.push({
-      id: this.numPosts,
-      key: this.numPosts,
+    var post = {
       user: 'You',
       text: contents,
       timeshow: 0,
       timeHide: 10000
-    });
+    };
 
-    this.numPosts++ 
-    this.setState({ posts: posts });
-
+    this.addPost(this.numPosts, post);
+    
     // post message for parent of frame to recieve
     window.parent.postMessage(
       { event_id: 'submitted post', contents: contents },  '*'
@@ -63,7 +61,7 @@ class App extends React.Component {
         <Post 
           question={true}
           user={'Question asker'}
-          text={'what do you all think about this issue?'}
+          text={'what do you think about this issue?'}
         />
         { this.state.posts.map((data) => {
           return (
