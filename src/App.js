@@ -1,8 +1,10 @@
 import React from 'react';
 import Post from './post';
 import Container from 'react-bootstrap/Container';
-import { posts } from './posts.json';
+import { test_posts, dpil_posts } from './posts.json';
 import './App.css'
+
+var posts = test_posts; // dpil_posts;
 
 class App extends React.Component {
   constructor(props) {
@@ -61,13 +63,15 @@ class App extends React.Component {
         <Post 
           question={true}
           user={'Question asker'}
-          text={'what do you think about this issue?'}
+          text={'Was denkst du über Überwachung?'}
         />
-        { this.state.posts.map((data) => {
-          return (
-            <Post {...data} />
-          );
-        }) }
+        <div class="posts">
+          { this.state.posts.map((data) => {
+            return (
+              <Post {...data} />
+            );
+          }) }
+        </div>
         { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
       </Container>
     );
