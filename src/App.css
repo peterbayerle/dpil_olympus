@@ -22,12 +22,11 @@ html {
 }
 
 .profilePicture {
-    width: 6%;
+    width: 30px;
 }
 
 #olympusLogo {
-    height: 4%;
-    width: 4%;
+    width: 40px;
 }
 
 #olympusTitle {

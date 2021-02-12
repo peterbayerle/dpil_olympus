@@ -1,7 +1,7 @@
 import React from 'react';
 import Post from './post';
+import Header from './header';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import { question, test_posts, dpil_posts } from './posts.json';
 import './App.css'
 
@@ -16,6 +16,10 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    this.startSimulation();
+  };
+
+  startSimulation() {
     for (var i=0; i<posts.length; i++) {
       (function(i) {
         this.showTimer = setTimeout(() => {
@@ -59,10 +63,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="light" expand="lg">
-            <img src={"olympus_logo.png"} id="olympusLogo"></img>
-            <Navbar.Brand className="pl-2" id="olympusTitle">Olympus</Navbar.Brand>
-          </Navbar>
+        <Header></Header>
         <Container className="App w-50 pt-3">
           <Post 
             question={true}
