@@ -1,7 +1,8 @@
 import React from 'react';
 import Post from './post';
 import Container from 'react-bootstrap/Container';
-import { test_posts, dpil_posts } from './posts.json';
+import Navbar from 'react-bootstrap/Navbar';
+import { question, test_posts, dpil_posts } from './posts.json';
 import './App.css'
 
 var posts = test_posts; // dpil_posts;
@@ -15,7 +16,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    // add posts     
     for (var i=0; i<posts.length; i++) {
       (function(i) {
         this.showTimer = setTimeout(() => {
@@ -58,22 +58,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container className="App w-50 pt-3">
-        <h1 id="olympusTitle" className="text-center">🏛 Olympus</h1>
-        <Post 
-          question={true}
-          user={'Question asker'}
-          text={'Was denkst du über Überwachung?'}
-        />
-        <div class="posts">
-          { this.state.posts.map((data) => {
-            return (
-              <Post {...data} />
-            );
-          }) }
-        </div>
-        { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
-      </Container>
+      <>
+        <Navbar bg="light" expand="lg">
+            <img src={"olympus_logo.png"} id="olympusLogo"></img>
+            <Navbar.Brand className="pl-2" id="olympusTitle">Olympus</Navbar.Brand>
+          </Navbar>
+        <Container className="App w-50 pt-3">
+          <Post 
+            question={true}
+            {...question}
+          />
+          <div className="posts">
+            { this.state.posts.map((data) => {
+              return (
+                <Post {...data} />
+              );
+            }) }
+          </div>
+          { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
+        </Container>
+      </>
     );
   };
 };
