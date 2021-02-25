@@ -1,11 +1,11 @@
 {
-    "question": {"user":"Kaspar","text":"Was denkst du über Überwachung?"},
+    "question": {"user":"Kaspar","profile_picture":"profile_pictures/profile0.png","text":"Was denkst du über Überwachung?"},
     "test_posts": [
-        {"user":"Peter","likeCount":10,"shareCount":5,"text":"Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen.","timeShow":0,"timeHide":5},
-        {"user":"Klara","likeCount":24,"shareCount":8,"text":"Es ist die Aufgabe der Behörden, für unsere Sicherheit zu sorgen und gegen terroristische Organisationen vorzugehen, bevor Menschenleben gefährdet werden. Unsere Sicherheit geht vor!","timeShow":0,"timeHide":10},
-        {"user":"Karl","likeCount":2,"shareCount":9,"text":"Wenn Terroristen staatliche Überwachung umgehen wollen, finden sie Mittel und Wege – das ist keine Lösung, denn somit werden nur die Unschuldigen überwacht!","timeShow":0,"timeHide":15},
-        {"user":"Anya","likeCount":11,"shareCount":4,"text":"Wenn die Überwachungsmaßnahmen noch weiter ausgedehnt werden, wäre es ein massiver Eingriff in die Privatsphäre der BürgerInnen. Zudem gibt es kaum Schutz gegen staatliche Überwachung…","timeShow":6,"timeHide":5},
-        {"user":"Marlene","likeCount":17,"shareCount":8,"text":"Dazu habe ich mir bislang noch keine Gedanken gemacht","timeShow":6,"timeHide":10}
+        {"user":"Peter","likeCount":10,"shareCount":5,"profile_picture":"profile_pictures/profile1.png","text":"Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen.","timeShow":0,"timeHide":5},
+        {"user":"Klara","likeCount":24,"shareCount":8,"profile_picture":"profile_pictures/profile2.png","text":"Es ist die Aufgabe der Behörden, für unsere Sicherheit zu sorgen und gegen terroristische Organisationen vorzugehen, bevor Menschenleben gefährdet werden. Unsere Sicherheit geht vor!","timeShow":0,"timeHide":10},
+        {"user":"Karl","likeCount":2,"shareCount":9,"profile_picture":"profile_pictures/profile3.png","text":"Wenn Terroristen staatliche Überwachung umgehen wollen, finden sie Mittel und Wege – das ist keine Lösung, denn somit werden nur die Unschuldigen überwacht!","timeShow":0,"timeHide":15},
+        {"user":"Anya","likeCount":11,"shareCount":4,"profile_picture":"profile_pictures/profile4.png","text":"Wenn die Überwachungsmaßnahmen noch weiter ausgedehnt werden, wäre es ein massiver Eingriff in die Privatsphäre der BürgerInnen. Zudem gibt es kaum Schutz gegen staatliche Überwachung…","timeShow":6,"timeHide":5},
+        {"user":"Marlene","likeCount":17,"shareCount":8,"profile_picture":"profile_pictures/profile5.png","text":"Dazu habe ich mir bislang noch keine Gedanken gemacht","timeShow":6,"timeHide":10}
     ],
     "dpil_posts":[
         {"user":"Peter 0","text":"test post 0","timeShow":0,"timeHide":20},

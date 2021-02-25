@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from './post';
 import Header from './header';
+import Footer from './footer';
 import Container from 'react-bootstrap/Container';
 import { question, test_posts, dpil_posts } from './posts.json';
 import './App.css'
@@ -64,7 +65,7 @@ class App extends React.Component {
     return (
       <>
         <Header></Header>
-        <Container className="App w-50 pt-3">
+        <Container className="App">
           <Post 
             question={true}
             {...question}
@@ -78,6 +79,7 @@ class App extends React.Component {
           </div>
           { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
         </Container>
+        <Footer></Footer>
       </>
     );
   };
