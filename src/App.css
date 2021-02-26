@@ -10,6 +10,10 @@ html {
     font-size: 80%;
 }
 
+.App {
+    margin-bottom: 66px;
+}
+
 .name {
     font-size: 85%;
 }
@@ -21,6 +25,7 @@ html {
 .footer {
     background-color: white;
     border-top: solid #9966CC;
+    height: 60px;
 }
 
 .Post {
@@ -42,6 +47,7 @@ html {
 
 .profilePicture {
     width: 35px;
+    margin-left: -10px;
 }
 
 #olympusLogo {

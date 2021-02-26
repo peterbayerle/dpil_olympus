@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import { question, test_posts, dpil_posts } from './posts.json';
 import './App.css'
 
-var posts = test_posts; // dpil_posts;
+var posts = dpil_posts;
 
 class App extends React.Component {
   constructor(props) {
