@@ -2,7 +2,7 @@
 https://dpil-olympus.herokuapp.com/
 
 ## Most recent update:
-See [2-12-21 update](https://github.com/peterbayerle/dpil_olympus/blob/main/docs/2-12-21.md)
+See [2-26-21 update](https://github.com/peterbayerle/dpil_olympus/blob/main/docs/2-26-21.md)
 
 ## Previous updates:
 Located in [docs](https://github.com/peterbayerle/dpil_olympus/tree/main/docs)
