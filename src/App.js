@@ -3,10 +3,8 @@ import Post from './post';
 import Header from './header';
 import Footer from './footer';
 import Container from 'react-bootstrap/Container';
-import { question, test_posts, dpil_posts } from './posts.json';
+import { question, posts } from './posts.json';
 import './App.css'
-
-var posts = dpil_posts;
 
 class App extends React.Component {
   constructor(props) {
@@ -66,10 +64,13 @@ class App extends React.Component {
       <>
         <Header></Header>
         <Container className="App">
-          <Post 
-            question={true}
-            {...question}
-          />
+          <div className="pt-1">
+            <Post
+              question={true}
+              {...question}
+            />
+          </div>
+          
           <div className="posts">
             { this.state.posts.map((data) => {
               return (

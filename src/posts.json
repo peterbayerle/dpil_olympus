@@ -1,22 +1,16 @@
 {
-    "question": {"user":"Kaspar","profile_picture":"profile_pictures/profile0.png","text":"Was denkst du über Überwachung?"},
-    "test_posts": [
-        {"user":"Peter","likeCount":10,"shareCount":5,"profile_picture":"profile_pictures/profile1.png","text":"Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen.","timeShow":0,"timeHide":5},
-        {"user":"Klara","likeCount":24,"shareCount":8,"profile_picture":"profile_pictures/profile2.png","text":"Es ist die Aufgabe der Behörden, für unsere Sicherheit zu sorgen und gegen terroristische Organisationen vorzugehen, bevor Menschenleben gefährdet werden. Unsere Sicherheit geht vor!","timeShow":0,"timeHide":10},
-        {"user":"Karl","likeCount":2,"shareCount":9,"profile_picture":"profile_pictures/profile3.png","text":"Wenn Terroristen staatliche Überwachung umgehen wollen, finden sie Mittel und Wege – das ist keine Lösung, denn somit werden nur die Unschuldigen überwacht!","timeShow":0,"timeHide":15},
-        {"user":"Anya","likeCount":11,"shareCount":4,"profile_picture":"profile_pictures/profile4.png","text":"Wenn die Überwachungsmaßnahmen noch weiter ausgedehnt werden, wäre es ein massiver Eingriff in die Privatsphäre der BürgerInnen. Zudem gibt es kaum Schutz gegen staatliche Überwachung…","timeShow":6,"timeHide":5},
-        {"user":"Marlene","likeCount":17,"shareCount":8,"profile_picture":"profile_pictures/profile5.png","text":"Dazu habe ich mir bislang noch keine Gedanken gemacht","timeShow":6,"timeHide":10}
-    ],
-    "dpil_posts":[
+    "question": {"user":"Thema","text":"Was denkst du über Überwachung?"},
+    "posts":[
+        {"user": "Louisa","likeCount":4,"shareCount":5,"profile_picture":"profile_pictures/profile0.png","text":"Da bin ich jetzt aber überfragt...","timeShow":0,"timeHide":3},
         {"user":"Peter","likeCount":10,"shareCount":5,"profile_picture":"profile_pictures/profile1.png","text":"Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen.","timeShow":0,"timeHide":20},
         {"user":"Klara","likeCount":24,"shareCount":5,"profile_picture":"profile_pictures/profile2.png","text":"Noch weniger Privatsphäre? Dabei ist sowieso schon unklar was mit unseren Daten geschieht!","timeShow":0,"timeHide":30},
         {"user":"Johann","likeCount":2,"shareCount":5,"profile_picture":"profile_pictures/profile3.png","text":"Dazu habe ich mir bislang noch keine Gedanken gemacht","timeShow":0,"timeHide":40},
         {"user":"Anya","likeCount":11,"shareCount":5,"profile_picture":"profile_pictures/profile4.png","text":"Es ist sicherlich wichtig erhebliche Gefahren abzuwehren, aber ebenso sollte die Privatsphäre des Einzelnen so gut es geht geschützt werden.","timeShow":0,"timeHide":50},
         {"user":"Marlene","likeCount":8,"shareCount":5,"profile_picture":"profile_pictures/profile5.png","text":"Ich hoffe dadurch gehen endlich die Terroranschläge zurück. Deutschland muss Maßnahmen ergreifen, um die Sicherheit seiner Bürger zu gewährleisten.","timeShow":0,"timeHide":60},
         {"user":"Katharina","likeCount":17,"shareCount":5,"profile_picture":"profile_pictures/profile6.png","text":"Es ist die Aufgabe der Behörden, für unsere Sicherheit zu sorgen und gegen terroristische Organisationen vorzugehen, bevor Menschenleben gefährdet werden. Unsere Sicherheitgeht vor!","timeShow":41,"timeHide":100},
-        {"user":"Otto","likeCount":7,"shareCount":5,"profile_picture":"profile_pictures/profile7.png","text":"Das wäre ein gezielter Angriff auf die Grundrechte! ➢ Unter dem Vorwand uns vor terroristischen Anschlägen beschützen zu wollen, beschattet der Staat seine BürgerInnen...super…","timeShow":51,"timeHide":110},
+        {"user":"Otto","likeCount":7,"shareCount":5,"profile_picture":"profile_pictures/profile7.png","text":"Das wäre ein gezielter Angriff auf die Grundrechte!","timeShow":51,"timeHide":110},
         {"user":"Werner","likeCount":22,"shareCount":5,"profile_picture":"profile_pictures/profile8.png","text":"Ich stelle meine Privatsphäre nicht über das kollektive Wohlergehen!","timeShow":61,"timeHide":120},
         {"user":"Johanna","likeCount":14,"shareCount":5,"profile_picture":"profile_pictures/profile9.png","text":"Wenn die Überwachungsmaßnahmen noch weiter ausgedehnt werden, wäre es ein massiver Eingriff in die Privatsphäre der BürgerInnen. Zudem gibt es kaum Schutz gegen staatliche Überwachung…","timeShow":71,"timeHide":130},
-        {"user":"Karl","likeCount":8,"shareCount":5,"profile_picture":"profile_pictures/profile10.png","text":"Da bin ich jetzt aber überfragt…","timeShow":81,"timeHide":140}
+        {"user":"Karl","likeCount":8,"shareCount":5,"profile_picture":"profile_pictures/profile10.png","text":"Unter dem Vorwand uns vor terroristischen Anschlägen beschützen zu wollen, beschattet der Staat seine BürgerInnen...super…","timeShow":81,"timeHide":140}
     ]
 }

@@ -11,6 +11,7 @@ html {
 }
 
 .App {
+    margin-top: 66px;
     margin-bottom: 66px;
 }
 
@@ -19,18 +20,29 @@ html {
 }
 
 .header {
-    background-color: #9966CC;
+    background-color: #4493D4;   /*#F67D65; #6CD4BD; #9966CC;*/
+}
+
+.question {
+    border: solid #4493D4;
+    border-radius: 5px;
+    border-width: 2px;
 }
 
 .footer {
     background-color: white;
-    border-top: solid #9966CC;
+    border-top: solid #4493D4;  /*#F67D65; #6CD4BD; #9966CC;*/
     height: 60px;
 }
 
 .Post {
     display: block;
     transition: transform 3s ease;
+ }
+
+ .LikeButton {
+    margin-right: -10px;
+    margin-bottom: 5px;
  }
 
 .hidden {
