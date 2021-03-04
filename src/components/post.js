@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button'
 
 class Post extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class Post extends React.Component {
   };
 
   setTimer() {
-    if (!this.props.question) {
+    if (!this.props.persist) {
       // hide after `timeUntilHide` milliseconds
       this._hideTimer = setTimeout(() => {
         this.setState({visible: false});
