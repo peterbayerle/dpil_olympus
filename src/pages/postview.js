@@ -12,7 +12,7 @@ class PostView extends React.Component {
     };
   
     componentDidMount() {
-      if (this.props.showPosts) {
+      if (!this.props.hidePosts) {
         this.startSimulation();
       }
     };

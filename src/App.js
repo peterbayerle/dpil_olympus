@@ -19,7 +19,7 @@ class App extends React.Component {
             <Route path="/" exact component={SelectView} />
             <Route path="/e" exact component={EphemeralPostView} />
             <Route path="/p" exact component={PersistantPostView}/>
-            <Route path="/c" exact component={() => <PersistantPostView showPosts={false} submitForm={true}/>}/>
+            <Route path="/c" exact component={() => <PersistantPostView hidePosts={false} submitForm={true}/>}/>
           </Switch>
         </BrowserRouter>
         <Footer></Footer>
