@@ -1,16 +1,20 @@
 import Post from '../components/post';
+import PostForm from '../components/postform';
 import React from 'react';
 
 class PostView extends React.Component {
     constructor(props) {
       super(props);
+      this.numPosts = 0;
       this.state = {
         posts: [],
       };
     };
   
     componentDidMount() {
-      this.startSimulation();
+      if (this.props.showPosts) {
+        this.startSimulation();
+      }
     };
   
     startSimulation() {
@@ -42,7 +46,8 @@ class PostView extends React.Component {
         user: 'You',
         text: contents,
         timeshow: 0,
-        timeHide: 10000
+        timeHide: 10000,
+        profile_picture: "profile_pictures/profile11.png"
       };
   
       this.addPost(this.numPosts, post);
@@ -72,7 +77,11 @@ class PostView extends React.Component {
                 );
                 }) }
             </div>
-            { /* <PostForm onSubmit={this.handlePostSubmission.bind(this)}/> */ }
+            
+            { this.props.submitForm ? 
+              <div className="pt-3">
+                <PostForm onSubmit={this.handlePostSubmission.bind(this)}/>
+              </div> : null }
         </>
       );
     };

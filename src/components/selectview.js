@@ -7,14 +7,20 @@ class SelectView extends React.Component {
         return (
             <Container className="text-center pt-3">
                 <table>
-                    <tr>
-                        <td>⏳</td>
-                        <td align="left"><Link to="/e"> Emphemeral view</Link></td>
-                    </tr>
-                    <tr>
-                        <td>♾</td>
-                        <td align="left"><Link to="/p"> Persistant view</Link></td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>⏳</td>
+                            <td align="left"><Link to="/e"> Emphemeral view</Link></td>
+                        </tr>
+                        <tr>
+                            <td>♾</td>
+                            <td align="left"><Link to="/p"> Persistant view</Link></td>
+                        </tr>
+                        <tr>
+                            <td>✍️</td>
+                            <td align="left"><Link to="/c"> Compose view</Link></td>
+                        </tr>
+                    </tbody>
                 </table>
             </Container>
         )
