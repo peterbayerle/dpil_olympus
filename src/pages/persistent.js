@@ -2,7 +2,7 @@ import React from 'react';
 import PostView from './postview';
 import { question, posts } from '../posts.json';
 
-class PersistantPostView extends React.Component {
+class PersistentPostView extends React.Component {
     constructor(props) {
         super(props);
         this.posts = posts;
@@ -25,4 +25,4 @@ class PersistantPostView extends React.Component {
 
 }
 
-export default PersistantPostView;
+export default PersistentPostView;

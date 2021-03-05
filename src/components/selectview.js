@@ -10,11 +10,11 @@ class SelectView extends React.Component {
                     <tbody>
                         <tr>
                             <td>⏳</td>
-                            <td align="left"><Link to="/e"> Emphemeral view</Link></td>
+                            <td align="left"><Link to="/e"> Ephemeral view</Link></td>
                         </tr>
                         <tr>
                             <td>♾</td>
-                            <td align="left"><Link to="/p"> Persistant view</Link></td>
+                            <td align="left"><Link to="/p"> Persistent view</Link></td>
                         </tr>
                         <tr>
                             <td>✍️</td>
