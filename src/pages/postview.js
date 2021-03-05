@@ -28,13 +28,13 @@ class PostView extends React.Component {
     };
   
     addPost(key, post) {
+      this.numPosts++;
+
       post.id = key;
       post.key = key;
       var newPosts = this.state.posts;
       newPosts.push(post);
       this.setState({posts: newPosts});
-  
-      this.numPosts++;
     }
   
     handlePostSubmission(event) {

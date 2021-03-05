@@ -17,6 +17,7 @@ class PersistantPostView extends React.Component {
                 question={question}
                 posts={posts}
                 submitForm={this.props.submitForm}
+                hidePosts={this.props.hidePosts}
             >
             </PostView>
         );  
