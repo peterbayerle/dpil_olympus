@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import EphemeralPostView from './pages/ephemeral';
 import PersistentPostView from './pages/persistent';
+import SignUpView from './components/signup';
 import SelectView from './components/selectview';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -17,6 +18,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SelectView} />
+            <Route path="/s" exact component={SignUpView} />
             <Route path="/e" exact component={EphemeralPostView} />
             <Route path="/p" exact component={PersistentPostView}/>
             <Route path="/c" exact component={() => <PersistentPostView hidePosts={true} submitForm={true}/>}/>

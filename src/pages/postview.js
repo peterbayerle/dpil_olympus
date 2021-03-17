@@ -83,7 +83,7 @@ class PostView extends React.Component {
             </div>
             
             { this.props.submitForm ? 
-              <div className="pt-1">
+              <div className="pt-3">
                 <PostForm disabled={this.state.madePost} onSubmit={this.handlePostSubmission.bind(this)}/>
               </div> : null }
         </>
