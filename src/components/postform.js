@@ -11,9 +11,9 @@ function PostForm(props) {
             placeholder="Was denkst du über dieses Thema?"
             id="formTextBox" 
             as="textarea" 
-            rows={2} />
+            rows={4} />
         </Form.Group>
-        <Button id="submitButton" variant="primary" type="submit">
+        <Button id="submitButton" variant="primary" type="submit" className={props.disabled ? "disabled" : ""}>
           Submit
         </Button>
       </Form.Row>

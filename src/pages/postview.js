@@ -1,3 +1,4 @@
+import Question from '../components/question';
 import Post from '../components/post';
 import PostForm from '../components/postform';
 import React from 'react';
@@ -8,6 +9,7 @@ class PostView extends React.Component {
       this.numPosts = 0;
       this.state = {
         posts: [],
+        madePost: false
       };
     };
   
@@ -39,23 +41,29 @@ class PostView extends React.Component {
   
     handlePostSubmission(event) {
       event.preventDefault();
-      var contents = event.target[0].value;
-  
-      // add new post
-      var post = {
-        user: 'You',
-        text: contents,
-        timeshow: 0,
-        timeHide: 10000,
-        profile_picture: "profile_pictures/profile11.png"
-      };
-  
-      this.addPost(this.numPosts, post);
+
+      if (!this.state.madePost) {
+        var contents = event.target[0].value;
+    
+        // add new post
+        var post = {
+          user: 'You',
+          text: contents,
+          likeCount: 0,
+          timeshow: 0,
+          timeHide: 10000,
+          profile_picture: "profile_pictures/profile11.png"
+        };
+    
+        this.addPost(this.numPosts, post);
+        
+        // post message for parent of frame to recieve
+        window.parent.postMessage(
+          { event_id: 'submitted post', contents: contents },  '*'
+        ); 
+        this.setState({madePost:true});
+      }
       
-      // post message for parent of frame to recieve
-      window.parent.postMessage(
-        { event_id: 'submitted post', contents: contents },  '*'
-      ); 
   
     };
   
@@ -63,11 +71,7 @@ class PostView extends React.Component {
       return (
         <>
             <div className="pt-1">
-                <Post
-                    question={true}
-                    persist={true}
-                    {...this.props.question}
-                />
+                <Question {...this.props.question}></Question>
             </div>
             
             <div className="posts">
@@ -79,8 +83,8 @@ class PostView extends React.Component {
             </div>
             
             { this.props.submitForm ? 
-              <div className="pt-3">
-                <PostForm onSubmit={this.handlePostSubmission.bind(this)}/>
+              <div className="pt-1">
+                <PostForm disabled={this.state.madePost} onSubmit={this.handlePostSubmission.bind(this)}/>
               </div> : null }
         </>
       );
