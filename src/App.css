@@ -17,6 +17,12 @@ table {
     font-size: 85%;
 }
 
+#createButton {
+    width: 100px;
+    background-color: #4493D4;
+    font-size: 85%;
+}
+
 #formTextBox {
     font-size: 85%;
 }

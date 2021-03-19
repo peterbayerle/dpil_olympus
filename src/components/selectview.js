@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 class SelectView extends React.Component {
+    componentDidMount() {
+        const { fromSignUp } = this.props;
+        console.log(fromSignUp);
+        this.fromSignUp = fromSignUp;
+    };
+
     render() {
         return (
             <Container className="text-center pt-3">
