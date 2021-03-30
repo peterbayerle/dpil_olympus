@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container';
 class SelectView extends React.Component {
     componentDidMount() {
         const { fromSignUp } = this.props;
-        console.log(fromSignUp);
         this.fromSignUp = fromSignUp;
     };
 

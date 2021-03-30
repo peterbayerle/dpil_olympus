@@ -20,12 +20,22 @@ class PostView extends React.Component {
     };
   
     startSimulation() {
+      this.timers = new Array(this.props.posts.length);
       for (var i=0; i<this.props.posts.length; i++) {
         (function(i) {
-          this.showTimer = setTimeout(() => {
+          var showTimer = setTimeout(() => {
             this.addPost(i, this.props.posts[i]);
           }, this.props.posts[i].timeShow*1000);
+          this.timers[i] = showTimer;
         }).bind(this)(i);
+      }
+    };
+
+    componentWillUnmount() {
+      if (!this.props.hidePosts) {
+        for (var t of this.timers) {
+          clearTimeout(t);
+        }
       }
     };
   
