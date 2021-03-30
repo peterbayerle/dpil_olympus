@@ -47,11 +47,11 @@ class PostView extends React.Component {
     
         // add new post
         var post = {
-          user: 'You',
+          user: this.props.user,
           text: contents,
           likeCount: 0,
           timeshow: 0,
-          timeHide: 10000,
+          timeHide: 1000,
           profile_picture: "profile_pictures/profile11.png"
         };
     
