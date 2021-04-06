@@ -8,6 +8,8 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Container from 'react-bootstrap/Container';
 
+import PhotoTest from "./pages/photo_test";
+
 import './App.css'
 
 class App extends React.Component {
@@ -21,6 +23,7 @@ class App extends React.Component {
             <Route path="/e" exact component={EphemeralPostView} />
             <Route path="/p" exact component={PersistentPostView}/>
             <Route path="/c" exact component={ComposeView}/>
+            <Route path="/photo" exact component={PhotoTest}/>
           </Switch>
         </BrowserRouter>
         <Footer></Footer>
