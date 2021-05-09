@@ -20,7 +20,8 @@ class App extends React.Component {
             <Route path="/" exact component={SelectView} />
             <Route path="/e" exact component={ () => <PostView {...postInfo} /> } />
             <Route path="/p" exact component={() => <PostView {...postInfo} persist={true} /> } />
-            <Route path="/c" exact component={() => <ComposeView {...postInfo} />} />
+            <Route path="/ce" exact component={() => <ComposeView {...postInfo} />} />
+            <Route path="/cp" exact component={() => <ComposeView {...postInfo} persist={true} />} />
           </Switch>
         </BrowserRouter>
         <Footer></Footer>

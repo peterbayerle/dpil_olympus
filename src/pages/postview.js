@@ -1,16 +1,13 @@
 import Question from '../components/question';
 import Post from '../components/post';
-import PostForm from '../components/postform';
 import React from 'react';
 
 class PostView extends React.Component {
     constructor(props) {
       super(props);
-      this.numPosts = 0;
       this.allPosts = [];
       this.state = {
         currentPosts: [],
-        madePost: false
       };
     };
   
@@ -57,50 +54,21 @@ class PostView extends React.Component {
       }
     };
 
+
+    addPost(key, post) {
+      post.id = key;
+      post.key = key;
+      var newPosts = this.state.currentPosts;
+      newPosts.push(post);
+      this.setState({currentPosts: newPosts});
+  };
+
     componentWillUnmount() {
       if (!this.props.hidePosts) {
         for (var t of this.timers) {
           clearTimeout(t);
         }
       }
-    };
-  
-    addPost(key, post) {
-      this.numPosts++;
-
-      post.id = key;
-      post.key = key;
-      var newPosts = this.state.currentPosts;
-      newPosts.push(post);
-      this.setState({posts: newPosts});
-    }
-  
-    handlePostSubmission(event) {
-      event.preventDefault();
-
-      if (!this.state.madePost) {
-        var contents = event.target[0].value;
-    
-        // add new post
-        var post = {
-          user: this.props.user,
-          text: contents,
-          likeCount: 0,
-          timeshow: 0,
-          timeHide: 1000,
-          profile_picture: "profile_pictures/profile11.png"
-        };
-    
-        this.addPost(this.numPosts, post);
-        
-        // post message for parent of frame to recieve
-        window.parent.postMessage(
-          { event_id: 'submitted post', contents: contents },  '*'
-        ); 
-        this.setState({madePost:true});
-      }
-      
-  
     };
   
     render() {
@@ -110,6 +78,8 @@ class PostView extends React.Component {
                 <Question question={this.props.question}></Question>
             </div>
             
+            { this.props.newPost ? <Post {...this.props.newPost} /> : null }
+
             <div className="posts">
                 { this.state.currentPosts.map((data) => {
                   return (
@@ -117,11 +87,6 @@ class PostView extends React.Component {
                   );
                 }) }
             </div>
-            
-            { this.props.submitForm ? 
-              <div className="pt-3">
-                <PostForm disabled={this.state.madePost} onSubmit={this.handlePostSubmission.bind(this)}/>
-              </div> : null }
         </>
       );
     };
