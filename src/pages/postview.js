@@ -7,25 +7,51 @@ class PostView extends React.Component {
     constructor(props) {
       super(props);
       this.numPosts = 0;
+      this.allPosts = [];
       this.state = {
-        posts: [],
+        currentPosts: [],
         madePost: false
       };
     };
   
     componentDidMount() {
-      if (!this.props.hidePosts) {
-        this.startSimulation();
+      // randomize username, text of post, time shown, and profile photo
+      var inds = Array.from(Array(this.props.users.length).keys())
+      for (var a of [this.props.users, this.props.posts, inds]) {
+        this.shuffle(a);
       }
+
+      for (var i=0; i<this.props.users.length; i++) {
+        this.allPosts.push({ 
+          user: this.props.users[i],
+          text: this.props.posts[i],
+          timeShow: this.props.times[i].show,
+          timeHide: this.props.times[i].hide,
+          likeCount: this.getRandomLikeCount(2, 12),
+          persist: this.props.persist,
+          profile_picture: `profile_pictures/profile${inds[i]}.png`
+        });
+      }
+
+      this.startSimulation();
+      
+    };
+
+    getRandomLikeCount(min, max) {
+      return Math.floor(Math.random() * max) + min;
+    };
+
+    shuffle(a) {
+      a.sort(() => Math.random() - 0.5);
     };
   
     startSimulation() {
-      this.timers = new Array(this.props.posts.length);
-      for (var i=0; i<this.props.posts.length; i++) {
+      this.timers = new Array(this.allPosts.length);
+      for (var i=0; i<this.allPosts.length; i++) {
         (function(i) {
           var showTimer = setTimeout(() => {
-            this.addPost(i, this.props.posts[i]);
-          }, this.props.posts[i].timeShow*1000);
+            this.addPost(i, this.allPosts[i]);
+          }, this.allPosts[i].timeShow*1000);
           this.timers[i] = showTimer;
         }).bind(this)(i);
       }
@@ -44,7 +70,7 @@ class PostView extends React.Component {
 
       post.id = key;
       post.key = key;
-      var newPosts = this.state.posts;
+      var newPosts = this.state.currentPosts;
       newPosts.push(post);
       this.setState({posts: newPosts});
     }
@@ -81,14 +107,14 @@ class PostView extends React.Component {
       return (
         <>
             <div className="pt-1">
-                <Question {...this.props.question}></Question>
+                <Question question={this.props.question}></Question>
             </div>
             
             <div className="posts">
-                { this.state.posts.map((data) => {
-                return (
-                    <Post {...data} />
-                );
+                { this.state.currentPosts.map((data) => {
+                  return (
+                      <Post {...data}/>
+                  );
                 }) }
             </div>
             

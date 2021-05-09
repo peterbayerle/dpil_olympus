@@ -1,18 +1,17 @@
-import React from 'react';
-import PostView from './postview';
-import { question, posts } from '../posts.json';
+// import React from 'react';
+// import PostView from './postview';
 
-class EphemeralPostView extends React.Component {
-    render() {
-        return (
-            <PostView 
-                question={question}
-                posts={posts}
-            >
-            </PostView>
-        );  
-    };
+// class EphemeralPostView extends React.Component {
+//     render() {
+//         return (
+//             <PostView 
+//                 question={question}
+//                 posts={posts}
+//             >
+//             </PostView>
+//         );  
+//     };
 
-}
+// }
 
-export default EphemeralPostView;
+// export default EphemeralPostView;

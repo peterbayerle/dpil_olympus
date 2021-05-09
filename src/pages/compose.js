@@ -1,5 +1,5 @@
 import React from 'react';
-import PersistentPostView from './persistent';
+import PostView from './postview';
 import SignUp from '../components/signup';
 
 class ComposeView extends React.Component {
@@ -19,7 +19,13 @@ class ComposeView extends React.Component {
             <>
                 { !this.state.user ? 
                 <SignUp onSubmit={this.onSubmitSignUp.bind(this)}></SignUp> : 
-                <PersistentPostView user={this.state.user} hidePosts={true} submitForm={true}/>
+                <PostView 
+                    question={this.props.question}
+                    users={this.props.compose_users}
+                    posts={this.props.compose_posts}
+                    times={this.props.compose_times}
+                    user={this.state.user} 
+                    submitForm={true}/>
                 }
             </>
         );  

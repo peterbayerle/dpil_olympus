@@ -1,6 +1,67 @@
 {
-    "question": {"text":"Was denkst du über Überwachung?"},
-    "posts":[
+    "question": "Was denkst du über Überwachung?",
+
+    "users": [
+        "Louisa",
+        "Peter",
+        "Klara",
+        "Johann",
+        "Anya",
+        "Marlene",
+        "Katharina",
+        "Otto",
+        "Werner",
+        "Johanna",
+        "Karl"
+    ],
+
+    "posts": [
+        "Da bin ich jetzt aber überfragt...",
+        "Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen.",
+        "Noch weniger Privatsphäre? Dabei ist sowieso schon unklar was mit unseren Daten geschieht!",
+        "Dazu habe ich mir bislang noch keine Gedanken gemacht",
+        "Es ist sicherlich wichtig erhebliche Gefahren abzuwehren, aber ebenso sollte die Privatsphäre des Einzelnen so gut es geht geschützt werden.",
+        "Ich hoffe dadurch gehen endlich die Terroranschläge zurück. Deutschland muss Maßnahmen ergreifen, um die Sicherheit seiner Bürger zu gewährleisten.",
+        "Es ist die Aufgabe der Behörden, für unsere Sicherheit zu sorgen und gegen terroristische Organisationen vorzugehen, bevor Menschenleben gefährdet werden. Unsere Sicherheitgeht vor!",
+        "Das wäre ein gezielter Angriff auf die Grundrechte!",
+        "Ich stelle meine Privatsphäre nicht über das kollektive Wohlergehen!",
+        "Wenn die Überwachungsmaßnahmen noch weiter ausgedehnt werden, wäre es ein massiver Eingriff in die Privatsphäre der BürgerInnen. Zudem gibt es kaum Schutz gegen staatliche Überwachung…",
+        "Unter dem Vorwand uns vor terroristischen Anschlägen beschützen zu wollen, beschattet der Staat seine BürgerInnen...super…"
+    ],
+
+    "times": [
+        {"show":0, "hide":4},
+        {"show":0,"hide":9},
+        {"show":5,"hide":9},
+        {"show":10,"hide":9},
+        {"show":15,"hide":9},
+        {"show":20,"hide":9},
+        {"show":25,"hide":9},
+        {"show":30,"hide":9},
+        {"show":35,"hide":9},
+        {"show":40,"hide":9},
+        {"show":45,"hide":9}
+    ],
+
+    "compose_users": [
+        "user 1",
+        "user 2",
+        "user 3"
+    ],
+
+    "compose_posts": [
+        "neutral 1",
+        "neutral 2",
+        "neutral 3"
+    ],
+
+    "compose_times": [
+        {"show":0, "hide":4},
+        {"show":0,"hide":9},
+        {"show":0,"hide":15}
+    ],
+
+    "posts_old":[
         {"timeShow":0,"timeHide":4,"user": "Louisa","likeCount":4,"shareCount":5,"profile_picture":"profile_pictures/profile0.png","text":"Da bin ich jetzt aber überfragt..."},
         {"timeShow":0,"timeHide":9,"user":"Peter","likeCount":10,"shareCount":5,"profile_picture":"profile_pictures/profile1.png","text":"Wenn es der Terrorabwehr dient und die Sicherheit fördert, sind unsere Daten nur ein kleiner Preis, den wir dafür zahlen müssen."},
         {"timeShow":5,"timeHide":9,"user":"Klara","likeCount":24,"shareCount":5,"profile_picture":"profile_pictures/profile2.png","text":"Noch weniger Privatsphäre? Dabei ist sowieso schon unklar was mit unseren Daten geschieht!"},
