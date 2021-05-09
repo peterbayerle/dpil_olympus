@@ -23,7 +23,11 @@ class SelectView extends React.Component {
                         </tr>
                         <tr>
                             <td>✍️</td>
-                            <td align="left"><Link to="/c"> Compose view</Link></td>
+                            <td align="left"><Link to="/ce">Compose view (ephemeral)</Link></td>
+                        </tr>
+                        <tr>
+                            <td>✍️</td>
+                            <td align="left"><Link to="/cp">Compose view (persistent)</Link></td>
                         </tr>
                     </tbody>
                 </table>
