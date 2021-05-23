@@ -18,10 +18,14 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={SelectView} />
-            <Route path="/e" exact component={ () => <PostView {...postInfo} /> } />
-            <Route path="/p" exact component={() => <PostView {...postInfo} persist={true} /> } />
-            <Route path="/ce" exact component={() => <ComposeView {...postInfo} />} />
-            <Route path="/cp" exact component={() => <ComposeView {...postInfo} persist={true} />} />
+            <Route path="/e/v" exact component={ () => <PostView {...postInfo} topic="veggie" /> } />
+            <Route path="/p/v" exact component={() => <PostView {...postInfo} topic="veggie" persist={true} /> } />
+            <Route path="/ce/v" exact component={() => <ComposeView {...postInfo} topic="veggie" />} />
+            <Route path="/cp/v" exact component={() => <ComposeView {...postInfo} topic="veggie" persist={true} />} />
+            <Route path="/e/s" exact component={ () => <PostView {...postInfo} topic="surveillance" /> } />
+            <Route path="/p/s" exact component={() => <PostView {...postInfo} topic="surveillance" persist={true} /> } />
+            <Route path="/ce/s" exact component={() => <ComposeView {...postInfo} topic="surveillance" />} />
+            <Route path="/cp/s" exact component={() => <ComposeView {...postInfo} topic="surveillance" persist={true} />} />
           </Switch>
         </BrowserRouter>
         <Footer></Footer>

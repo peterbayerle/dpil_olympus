@@ -10,6 +10,7 @@ class ComposeView extends React.Component {
             user: false,
             newPost: false
         }
+        this.topic = this.props.topic;
     };
 
     onSubmitSignUp(result) {
@@ -47,24 +48,26 @@ class ComposeView extends React.Component {
     render() {
         return (
             <>
-                { !this.state.user ? 
-                    <SignUp onSubmit={this.onSubmitSignUp.bind(this)}></SignUp> : 
-                    <>
-                        <PostView 
-                            question={this.props.question}
-                            user={this.state.user} 
-                            persist={this.props.persist}
-                            users={this.props.compose_users}
-                            posts={this.props.compose_posts}
-                            times={this.props.compose_times}
-                            newPost={this.state.newPost}
-                        />
+                {this.topic === "veggie" || this.topic === "surveillance" ? 
+                    !this.state.user ? 
+                        <SignUp onSubmit={this.onSubmitSignUp.bind(this)}></SignUp> : 
+                        <>
+                            <PostView 
+                                questions={this.props.questions}
+                                user={this.state.user} 
+                                persist={this.props.persist}
+                                users={this.props.compose_users}
+                                posts={{"veggie": this.props.compose_posts, "surveillance": this.props.compose_posts}}
+                                times={this.props.compose_times}
+                                newPost={this.state.newPost}
+                                topic={this.topic}
+                            />
 
-                        <div className="pt-3">
-                            <PostForm disabled={this.state.newPost} onSubmit={this.handlePostSubmission.bind(this)}/>
-                        </div>
-                    </>
-                }
+                            <div className="pt-3">
+                                <PostForm disabled={this.state.newPost} onSubmit={this.handlePostSubmission.bind(this)}/>
+                            </div>
+                        </>
+                : null}
             </>
         );
     };  

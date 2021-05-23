@@ -61,7 +61,7 @@ class Post extends React.Component {
           <div className='pt-1'>
           <Card>
             <Card.Header>
-              <img className="rounded-circle profilePicture" src={"https://raw.githubusercontent.com/peterbayerle/dpil_olympus/main/public/"+this.props.profile_picture} alt="profile"></img> 
+              <img className="rounded-circle profilePicture" src={"https://raw.githubusercontent.com/peterbayerle/dpil_docs/main/olympus_static/"+this.props.profile_picture} alt="profile"></img> 
               <span className="pl-2 name"><b>{this.props.user}</b></span>
               <div className="float-right pt-1">
                 <svg onClick={()=>{this.pressLike()}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={this.state.pressedLike ? "#4493D4" : "black"} className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">

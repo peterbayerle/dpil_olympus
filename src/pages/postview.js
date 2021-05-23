@@ -9,29 +9,31 @@ class PostView extends React.Component {
       this.state = {
         currentPosts: [],
       };
+      this.topic = this.props.topic;
     };
   
     componentDidMount() {
-      // randomize username, text of post, time shown, and profile photo
-      var inds = Array.from(Array(this.props.users.length).keys())
-      for (var a of [this.props.users, this.props.posts, inds]) {
-        this.shuffle(a);
-      }
+      if (this.topic === "veggie" || this.topic === "surveillance") {
+        // randomize username, text of post, time shown, and profile photo
+        var inds = Array.from(Array(this.props.times.length).keys())
+        for (var a of [this.props.users, this.props.posts[this.topic], inds]) {
+          this.shuffle(a);
+        }
 
-      for (var i=0; i<this.props.users.length; i++) {
-        this.allPosts.push({ 
-          user: this.props.users[i],
-          text: this.props.posts[i],
-          timeShow: this.props.times[i].show,
-          timeHide: this.props.times[i].hide,
-          likeCount: this.getRandomLikeCount(2, 12),
-          persist: this.props.persist,
-          profile_picture: `profile_pictures/profile${inds[i]}.png`
-        });
-      }
+        for (var i=0; i<this.props.times.length; i++) {
+          this.allPosts.push({ 
+            user: this.props.users[i],
+            text: this.props.posts[this.topic][i],
+            timeShow: this.props.times[i].show,
+            timeHide: this.props.times[i].hide,
+            likeCount: this.getRandomLikeCount(2, 12),
+            persist: this.props.persist,
+            profile_picture: `profile_pictures/profile${inds[i]}.png`
+          });
+        }
 
-      this.startSimulation();
-      
+        this.startSimulation();
+      }
     };
 
     getRandomLikeCount(min, max) {
@@ -75,7 +77,7 @@ class PostView extends React.Component {
       return (
         <>
             <div className="pt-1">
-                <Question question={this.props.question}></Question>
+                <Question question={this.props.questions[this.topic]}></Question>
             </div>
             
             { this.props.newPost ? <Post {...this.props.newPost} /> : null }
