@@ -23,10 +23,10 @@ class PostView extends React.Component {
         for (var i=0; i<this.props.times.length; i++) {
           this.allPosts.push({ 
             user: this.props.users[i],
-            text: this.props.posts[this.topic][i],
+            text: this.props.posts[this.topic][i][0],
             timeShow: this.props.times[i].show,
             timeHide: this.props.times[i].hide,
-            likeCount: this.getRandomLikeCount(2, 12),
+            likeCount: this.props.posts[this.topic][i][1],
             persist: this.props.persist,
             profile_picture: `profile_pictures/profile${inds[i]}.png`
           });
@@ -34,10 +34,6 @@ class PostView extends React.Component {
 
         this.startSimulation();
       }
-    };
-
-    getRandomLikeCount(min, max) {
-      return Math.floor(Math.random() * max) + min;
     };
 
     shuffle(a) {
