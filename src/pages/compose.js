@@ -63,9 +63,12 @@ class ComposeView extends React.Component {
                                 topic={this.topic}
                             />
 
+                            {!this.state.newPost ? 
                             <div className="pt-3">
                                 <PostForm disabled={this.state.newPost} onSubmit={this.handlePostSubmission.bind(this)}/>
-                            </div>
+                             </div>
+                            : null}
+                            
                         </>
                 : null}
             </>
