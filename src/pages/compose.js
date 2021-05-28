@@ -55,7 +55,7 @@ class ComposeView extends React.Component {
                         <SignUp onSubmit={this.onSubmitSignUp.bind(this)}></SignUp> : 
                         <>
                             <div className="pt-1">
-                                <Question question={this.props.questions.veggie}></Question>
+                                <Question question={this.props.questions[this.topic]}></Question>
                             </div>
 
                             {!this.state.newPost ? 
