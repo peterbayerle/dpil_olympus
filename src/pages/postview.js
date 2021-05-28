@@ -72,9 +72,12 @@ class PostView extends React.Component {
     render() {
       return (
         <>
-            <div className="pt-1">
+            { this.props.questions ? 
+              <div className="pt-1">
                 <Question question={this.props.questions[this.topic]}></Question>
-            </div>
+              </div>
+            : null}
+            
             
             { this.props.newPost ? <Post {...this.props.newPost} /> : null }
 

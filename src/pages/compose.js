@@ -2,6 +2,7 @@ import React from 'react';
 import PostView from './postview';
 import PostForm from '../components/postform';
 import SignUp from '../components/signup';
+import Question from '../components/question';
 
 class ComposeView extends React.Component {
     constructor(props) {
@@ -52,8 +53,18 @@ class ComposeView extends React.Component {
                     !this.state.user ? 
                         <SignUp onSubmit={this.onSubmitSignUp.bind(this)}></SignUp> : 
                         <>
+                            <div className="pt-1">
+                                <Question question={this.props.questions.veggie}></Question>
+                            </div>
+
+                            {!this.state.newPost ? 
+                            <div className="pt-3">
+                                <PostForm disabled={this.state.newPost} onSubmit={this.handlePostSubmission.bind(this)}/>
+                             </div>
+                            : null}
+                            
                             <PostView 
-                                questions={this.props.questions}
+                                questions={null}
                                 user={this.state.user} 
                                 persist={this.props.persist}
                                 users={this.props.compose_users}
@@ -63,11 +74,7 @@ class ComposeView extends React.Component {
                                 topic={this.topic}
                             />
 
-                            {!this.state.newPost ? 
-                            <div className="pt-3">
-                                <PostForm disabled={this.state.newPost} onSubmit={this.handlePostSubmission.bind(this)}/>
-                             </div>
-                            : null}
+                            
                             
                         </>
                 : null}
