@@ -12,6 +12,7 @@ class ComposeView extends React.Component {
             newPost: false
         }
         this.topic = this.props.topic;
+        console.log(this.props.persist)
     };
 
     onSubmitSignUp(result) {
@@ -66,16 +67,13 @@ class ComposeView extends React.Component {
                             <PostView 
                                 questions={null}
                                 user={this.state.user} 
-                                persist={this.props.persist}
+                                persist={!this.state.newPost ? true : this.props.persist}
                                 users={this.props.compose_users}
                                 posts={{"veggie": this.props.compose_posts, "surveillance": this.props.compose_posts}}
                                 times={this.props.compose_times}
                                 newPost={this.state.newPost}
                                 topic={this.topic}
                             />
-
-                            
-                            
                         </>
                 : null}
             </>

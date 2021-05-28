@@ -27,7 +27,6 @@ class PostView extends React.Component {
             timeShow: this.props.times[i].show,
             timeHide: this.props.times[i].hide,
             likeCount: this.props.posts[this.topic][i][1],
-            persist: this.props.persist,
             profile_picture: `profile_pictures/profile${inds[i]}.png`
           });
         }
@@ -71,7 +70,7 @@ class PostView extends React.Component {
   
     render() {
       return (
-        <>
+        <div key={this.props.persist}>
             { this.props.questions ? 
               <div className="pt-1">
                 <Question question={this.props.questions[this.topic]}></Question>
@@ -84,11 +83,11 @@ class PostView extends React.Component {
             <div className="posts">
                 { this.state.currentPosts.map((data) => {
                   return (
-                      <Post {...data}/>
+                      <Post persist={this.props.persist} {...data}/>
                   );
                 }) }
             </div>
-        </>
+        </div>
       );
     };
   };

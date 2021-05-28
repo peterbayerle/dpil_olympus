@@ -7,9 +7,13 @@ class Post extends React.Component {
     this.state = {
       visible: true,
       pressedLike: false,
-      likeCount: 0
-    }
+      likeCount: 0,
+    };
   };
+
+  componentWillMount() {
+    this.setState({startedTimer: !this.props.persist});
+  }
 
   componentDidMount() {
     this.setState({likeCount: this.props.likeCount});
@@ -57,7 +61,9 @@ class Post extends React.Component {
     return (
       <div 
         id={`post${this.props.id}`} 
-        className={this.postClasses}>
+        className={this.postClasses}
+        key={this.props.persist}
+        timer={!this.props.persist && !this.state.startedTimer? null : this.setTimer()}>
           <div className='pt-1'>
           <Card>
             <Card.Header>
