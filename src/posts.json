@@ -54,18 +54,12 @@
     },
 
     "times": [
-        {"show":0, "hide":4},
-        {"show":0,"hide":9},
-        {"show":5,"hide":9},
-        {"show":10,"hide":9},
-        {"show":15,"hide":9},
-        {"show":20,"hide":9},
-        {"show":25,"hide":9},
-        {"show":30,"hide":9},
-        {"show":35,"hide":9},
-        {"show":40,"hide":9},
-        {"show":45,"hide":9},
-        {"show":50,"hide": 9}
+        {"show":0, "hide":20},
+        {"show":0,"hide":30},
+        {"show":0,"hide":40},
+        {"show":0,"hide":50},
+        {"show":20,"hide":60},
+        {"show":30,"hide":60}
     ],
 
     "compose_users": [
@@ -83,8 +77,8 @@
     ],
 
     "compose_times": [
-        {"show":0, "hide":4},
-        {"show":0,"hide":9},
-        {"show":0,"hide":14}
+        {"show":0, "hide":5},
+        {"show":0,"hide":10},
+        {"show":0,"hide":15}
     ]
 }
