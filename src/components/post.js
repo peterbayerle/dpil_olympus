@@ -63,7 +63,7 @@ class Post extends React.Component {
         id={`post${this.props.id}`} 
         className={this.postClasses}
         key={this.props.persist}
-        timer={!this.props.persist && !this.state.startedTimer? null : this.setTimer()}>
+        timer={!this.props.persist && !this.state.startedTimer && this.isComposePage ? null : this.setTimer }>
           <div className='pt-1'>
           <Card>
             <Card.Header>

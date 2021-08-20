@@ -34,9 +34,9 @@ class ComposeView extends React.Component {
                     text: contents,
                     likeCount: 0,
                     timeShow: 0,
-                    timeHide: 10,
+                    timeHide: this.props.userPostHide,
                     persist: this.props.persist,
-                    profile_picture: "profile_pictures/profile11.png"
+                    profile_picture: "profile_pictures/profile11.png",
                 }
             });
             

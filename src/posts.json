@@ -54,12 +54,12 @@
     },
 
     "times": [
-        {"show":0, "hide":20},
-        {"show":0,"hide":30},
-        {"show":0,"hide":40},
+        {"show":0, "hide":5},
+        {"show":0,"hide":20},
+        {"show":0,"hide":35},
         {"show":0,"hide":50},
-        {"show":20,"hide":60},
-        {"show":30,"hide":60}
+        {"show":5,"hide":60},
+        {"show":20,"hide":60}
     ],
 
     "compose_users": [
@@ -80,5 +80,7 @@
         {"show":0, "hide":5},
         {"show":0,"hide":10},
         {"show":0,"hide":15}
-    ]
+    ],
+
+    "userPostHide": 20
 }
