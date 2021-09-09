@@ -11,8 +11,7 @@
         "Niklas Opitz",
         "Florian Kaminski",
         "Alex Hellwig",
-        "Marcel Krause",
-        "Daniel Schwarz"
+        "Marcel Krause"
     ],
 
     "questions": {
@@ -42,7 +41,7 @@
     },
 
     "times": [
-        {"show":0, "hide":5},
+        {"show":0,"hide":5},
         {"show":0,"hide":20},
         {"show":0,"hide":35},
         {"show":0,"hide":50},
@@ -53,7 +52,8 @@
     "compose_users": [
         "Anna Nowak",  
         "Finn Scheer",
-        "Lukas Yilmaz"
+        "Lukas Yilmaz",
+        "Daniel Schwarz"
     ],
 
     "compose_posts": [
@@ -65,10 +65,13 @@
     ],
 
     "compose_times": [
-        {"show":0, "hide":30},
-        {"show":0,"hide":40},
-        {"show":0,"hide":50}
+        {"show":0,"hide":15},
+        {"show":0,"hide":35},
+        {"show":0,"hide":55},
+        {"show":15,"hide":60}
     ],
 
-    "userPostHide": 60
+    "userPostHide": 60,
+
+    "compose_posts_persist_until_submit": false
 }
