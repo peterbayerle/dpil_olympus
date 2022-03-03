@@ -41,10 +41,10 @@
     },
 
     "times": [
+        {"show":0,"hide":2},
         {"show":0,"hide":5},
-        {"show":0,"hide":20},
-        {"show":0,"hide":35},
-        {"show":0,"hide":50},
+        {"show":0,"hide":10},
+        {"show":3,"hide":50},
         {"show":5,"hide":60},
         {"show":20,"hide":60}
     ],
